@@ -32,22 +32,52 @@ const iceCream = [
 // }
 
 function orderItem(selectedItemName) {
-  console.log('ordering', selectedItemName);
+  // console.log('ordering', selectedItemName);
   let itemOrdered = null
   for (let i = 0; i < iceCream.length; i++) {
     let item = iceCream[i]
     if (item.name == selectedItemName) {
-      console.log('found', item);
+      // console.log('found', item);
       itemOrdered = item
-
     }
   }
 
   itemOrdered.quantity += 1
+  drawOrder()
 
 }
 
+function calculateCostTotal() {
+  let costTotal = 0
+  for (let i = 0; i < iceCream.length; i++) {
+    let item = iceCream[i]
+    costTotal += item.price * item.quantity
+  }
+  // console.log('💳', costTotal);
 
+  return costTotal
+}
 
-console.log(':D');
+function drawOrder() {
+  let cartElm = document.getElementById('cart')
+  // console.log('📃', cartElm);
+  let cartContent = ''
+  for (let i = 0; i < iceCream.length; i++) {
+    // console.log(i, iceCream[i]);
+    let item = iceCream[i]
+    // console.log(`${item.quantity}x ${item.name} $${item.price * item.quantity}`);
+    if (item.quantity > 0) {
+      cartContent += `<p>${item.quantity}x ${item.name} $${(item.price * item.quantity).toFixed(2)}</p>`
+    }
+  }
+  console.log(cartContent);
+  cartElm.innerHTML = cartContent
+
+  let customerCost = calculateCostTotal()
+  // console.log('You owe me', customerCost);
+  let costElm = document.getElementById('cost')
+  costElm.innerText = customerCost.toFixed(2)
+
+}
+
 
