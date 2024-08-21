@@ -20,10 +20,11 @@
 
 <body class="bg-light">
 
+  <!-- SECTION item cards + order card -->
   <main class="container-fluid">
     <section class="row">
 
-      <!-- SECTION menu cards -->
+      <!-- SECTION item cards -->
       <div class="col-md-9">
         <section class="row g-3">
 
@@ -37,7 +38,7 @@
                 <h1>Vanilla</h1>
                 <p class="text-end fw-bold text-success">$3.00</p>
                 <div>
-                  <button onclick="orderItem('Vanilla')" class="btn btn-primary">BUY NOW</button>
+                  <button onclick="orderItem('Vanilla')" class="btn btn-primary w-100">BUY NOW</button>
                 </div>
               </div>
             </div>
@@ -54,7 +55,7 @@
                 <h1>Strawberry</h1>
                 <p class="text-end fw-bold text-success">$3.25</p>
                 <div>
-                  <button onclick="orderItem('Vanilla')" class="btn btn-primary">BUY NOW</button>
+                  <button onclick="orderItem('Strawberry')" class="btn btn-primary w-100">BUY NOW</button>
                 </div>
               </div>
             </div>
@@ -70,7 +71,7 @@
                 <h1>Cookie Dough</h1>
                 <p class="text-end fw-bold text-success">$3.50</p>
                 <div>
-                  <button class="btn btn-primary">BUY NOW</button>
+                  <button onclick="orderItem('Cookie Dough')" class="btn btn-primary w-100">BUY NOW</button>
                 </div>
               </div>
             </div>
@@ -86,7 +87,7 @@
                 <h1>Chocolate Chips</h1>
                 <p class="text-end fw-bold text-success">$1.25</p>
                 <div>
-                  <button class="btn btn-primary">BUY NOW</button>
+                  <button onclick="orderItem('Chocolate Chips')" class="btn btn-primary w-100">BUY NOW</button>
                 </div>
               </div>
             </div>
@@ -102,7 +103,7 @@
                 <h1>Sprinkles</h1>
                 <p class="text-end fw-bold text-success">$1.25</p>
                 <div>
-                  <button class="btn btn-primary">BUY NOW</button>
+                  <button onclick="orderItem('Sprinkles')" class="btn btn-primary w-100">BUY NOW</button>
                 </div>
               </div>
             </div>
@@ -118,7 +119,7 @@
                 <h1>Cookie Chunks</h1>
                 <p class="text-end fw-bold text-success">$1.75</p>
                 <div>
-                  <button class="btn btn-primary">BUY NOW</button>
+                  <button onclick="orderItem('Cookie Chunks')" class="btn btn-primary w-100">BUY NOW</button>
                 </div>
               </div>
             </div>
@@ -129,18 +130,20 @@
         </section>
       </div>
 
+      <!-- SECTION order card -->
       <div class="col-md-3">
         <div class="card">
           <div class="card-body">
-            <div class="card-title text-center fs-3">
+            <div class="card-title text-center fs-4 fw-bold">
               ORDER
             </div>
             <hr />
-            <!-- order details -->
+            <!-- SECTION order details -->
             <div>
               1x Vanilla $0.00
             </div>
             <hr />
+            <!-- SECTION order total -->
             <div>
               Total: $<span>0.00</span>
             </div>
